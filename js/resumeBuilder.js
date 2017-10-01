@@ -60,8 +60,10 @@ var bio = {
 };
 
 $("#main").append(bio.name); */
-//-------------------------------------------------
 
+
+//-------------------------------------------------
+/*
 var work = {
 	"job" : "teacher",
 	"employer" : 40,
@@ -78,3 +80,100 @@ var edu = {
 
 $("#main").append(work["job"]); 
 $("#main").append(edu.schoolName); 
+*/
+
+//-----------------NEBO----------------------------
+/*var work = {};
+	
+work.job = "teacher";
+work.employer = 40;
+work.year =	"2015";
+work.city = "Jihlava";
+
+var edu = {};
+edu["schoolName"] = "TU Liberec FP";
+edu["start"] = "2000";
+edu["end"] = "2010";
+
+$("#main").append(work["job"]); 
+$("#main").append(edu.schoolName); */
+
+
+//-----------JSON----------------------------------
+var education = {
+	"schools" : [
+		{
+			"name" : "SPS a VOS",
+			"location" : "Chomutov",
+			"degree": "Master",
+			"dates" : 2001,
+			"majors" : ["ICT","Programing","EPo"],
+			"URL" : "http://www.sps.cz"
+		},
+		{
+			"name" : "FP TuL",
+			"location" : "Liberec",
+			"degree": "Grand-Master",
+			"dates" : 2007,
+			"majors" : ["Informatika","fyzika"],
+			"URL" : "http://www.tul.cz"
+		}
+	],
+
+	"onlineCourses" : [
+		{
+			"title" : "CSS HMTL",
+			"school" : "Udacity",
+			"dates" : 2017,
+			"URL" : "http://www.udacity.com"
+		}
+	]
+};
+
+var work = {
+	"jobs" : [
+	{
+		"employer" : "ZS Demlova",
+		"title" : "Ucitel",
+		"location" : "Demlova 32, Jihlava",
+		"dates" : "2015-today",
+		"description" : "Ucitel na zakladni skole."
+	},
+	{
+		"employer" : "ZS Na Kopcich",
+		"title" : "Ucitel",
+		"location" : "Na Kopcich 32, Trebic",
+		"dates" : "2013-2015",
+		"description" : "Ucitel na zakladni skole."
+	}
+	]
+};
+
+var projekts = {
+	"projekts" : [
+	{
+		"title" : "Portfolio v Java Script",
+		"dates" : 2017,
+		"description" : "Tvorba intenetoveho portfolia v JS",
+		"images" : ["images/fry.jpg","images/fry.jpg"]
+	}
+	]
+};
+
+var bio = {
+	"name" : "Petr Majer",
+	"role" : "JS shit",
+	"skills" : ["PC","Teaching","JS"],
+	"contacts" : {
+		"mobile" : "725 279 379",
+		"email" : "majer.p@gmail.com",
+		"github" : "PeMajer",
+		"twitter" : "PeMajer",
+		"location" : "Jihlava"
+	},
+	"biopic" : "images/fry.jpg",
+	"welcomeMessage": "Vitejte na mem portfoliu"
+
+};
+
+
