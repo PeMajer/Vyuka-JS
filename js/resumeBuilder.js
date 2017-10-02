@@ -176,4 +176,11 @@ var bio = {
 
 };
 
+var charEscape = function(_html) { //funkce ktera nahradi zavorky <>, normalnim neskodlivym textem
+    var newHTML = _html;
 
+    newHTML = _html.replace(/</g, "&lt;");  //   /</g  =najdi vsechny znaky <  -----  "&lt;" = znak < 
+    newHTML = newHTML.replace(/>/g, "&gt;");
+
+    return newHTML;
+};
