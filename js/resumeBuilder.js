@@ -96,8 +96,8 @@ edu["start"] = "2000";
 edu["end"] = "2010";
 
 $("#main").append(work["job"]); 
-$("#main").append(edu.schoolName); */
-
+$("#main").append(edu.schoolName); 
+*/
 
 //-----------JSON----------------------------------
 var education = {
@@ -124,6 +124,12 @@ var education = {
 		{
 			"title" : "CSS HMTL",
 			"school" : "Udacity",
+			"dates" : 2016,
+			"URL" : "http://www.udacity.com"
+		},
+		{
+			"title" : "CSS HMTL 2",
+			"school" : "Udacity",
 			"dates" : 2017,
 			"URL" : "http://www.udacity.com"
 		}
@@ -144,26 +150,32 @@ var work = {
 		"title" : "Ucitel",
 		"location" : "Na Kopcich 32, Trebic",
 		"dates" : "2013-2015",
-		"description" : "Ucitel na zakladni skole."
+		"description" : "Ucitel na zakladni skole. VE skole plne dementu a vyhorelejch raket...hodil jsme se tam"
 	}
 	]
 };
 
-var projekts = {
-	"projekts" : [
+var projects = {
+	"projekty" : [
 	{
 		"title" : "Portfolio v Java Script",
 		"dates" : 2017,
 		"description" : "Tvorba intenetoveho portfolia v JS",
-		"images" : ["images/fry.jpg","images/fry.jpg"]
-	}
+		"images" : ["images/197x148.gif","images/197x148.gif","images/197x148.gif","images/197x148.gif"]
+	},
+	{
+		"title" : "Resume",
+		"dates" : 2017,
+		"description" : "Tvorba Resume pro Udacity v JS",
+		"images" : ["images/197x148.gif","images/197x148.gif"]
+	}	
 	]
 };
 
 var bio = {
 	"name" : "Petr Majer",
 	"role" : "JS shit",
-	"skills" : ["PC","Teaching","JS"],
+	"skills" : ["PC","Teaching","JS","Dancing", "Awsomness"],
 	"contacts" : {
 		"mobile" : "725 279 379",
 		"email" : "majer.p@gmail.com",
@@ -176,6 +188,8 @@ var bio = {
 
 };
 
+
+
 var charEscape = function(_html) { //funkce ktera nahradi zavorky <>, normalnim neskodlivym textem
     var newHTML = _html;
 
@@ -184,3 +198,184 @@ var charEscape = function(_html) { //funkce ktera nahradi zavorky <>, normalnim 
 
     return newHTML;
 };
+//-----------------------------------------------------------------------
+function displayBio () {
+	var formatedBio = HTMLheaderRole.replace("%data%",bio.role);
+		$("#header").prepend(formatedBio);
+	
+	var formatedBio = HTMLheaderName.replace("%data%",bio.name);
+		$("#header").prepend(formatedBio);
+	
+	var formatedBio = HTMLmobile.replace("%data%",bio.contacts.mobile);
+		$("#topContacts").append(formatedBio);
+	
+	var formatedBio = HTMLemail.replace("%data%",bio.contacts.email);
+		$("#topContacts").append(formatedBio);
+	
+	var formatedBio = HTMLgithub.replace("%data%",bio.contacts.github);
+		$("#topContacts").append(formatedBio);
+	
+	var formatedBio = HTMLtwitter.replace("%data%",bio.contacts.twitter);
+		$("#topContacts").append(formatedBio);
+	
+	var formatedBio = HTMLlocation.replace("%data%",bio.contacts.location);
+		$("#topContacts").append(formatedBio);
+	
+	var formatedBio = HTMLbioPic.replace("%data%",bio.biopic);
+		$("#header").append(formatedBio);
+	
+	var formatedBio = HTMLwelcomeMsg.replace("%data%",bio.welcomeMessage);
+		$("#header").append(formatedBio);
+};
+
+//----------------------------------------------------------------------
+function displaySkills () {
+	if (bio.skills.length>0) {               // zobrazovani resume pokud existuji skills :)
+		$("#header").append(HTMLskillsStart);
+
+		var formatedSkill = HTMLskills.replace("%data%",bio.skills[0]);
+		$("#skills").append(formatedSkill);
+
+		var formatedSkill = HTMLskills.replace("%data%",bio.skills[1]);
+		$("#skills").append(formatedSkill);
+
+		var formatedSkill = HTMLskills.replace("%data%",bio.skills[2]);
+		$("#skills").append(formatedSkill);
+
+		var formatedSkill = HTMLskills.replace("%data%",bio.skills[3]);
+		$("#skills").append(formatedSkill);
+
+		var formatedSkill = HTMLskills.replace("%data%",bio.skills[4]);
+		$("#skills").append(formatedSkill);
+	};
+};
+// ------------------------------------------------------------------------------------
+/*function displayWork () {
+	for (job in work.jobs) {                   //ZOBRAZENI CASTI WORK pomoci FORu
+		$("#workExperience").append(HTMLworkStart);	
+
+		var formatedEmployer = HTMLworkEmployer.replace("%data%",work.jobs[job].employer);
+		
+		var formatedTitle = HTMLworkTitle.replace("%data%",work.jobs[job].title);
+		
+		formatedEmployerTitle = formatedEmployer + formatedTitle;	
+
+		$(".work-entry:last").append(formatedEmployerTitle);
+		
+		var formatedworkDates = HTMLworkDates.replace("%data%",work.jobs[job].dates);
+		$(".work-entry:last").append(formatedworkDates);
+		
+		var formatedDescription = HTMLprojectDescription.replace("%data%",work.jobs[job].description);
+		$(".work-entry:last").append(formatedDescription);	
+	}; 
+
+};
+
+displayWork (); */
+
+function displayWork () {
+
+	for (var i= 0; i< work.jobs.length; i++) {                //to stejne jako predtim jen jsme pouzil for a ne forin
+	 	$("#workExperience").append(HTMLworkStart);
+
+ 		var formatedEmployer = HTMLworkEmployer.replace("%data%",work.jobs[i].employer);
+
+		var formatedTitle = HTMLworkTitle.replace("%data%",work.jobs[i].title);
+		formatedEmployerTitle = formatedEmployer + formatedTitle;
+	
+		$(".work-entry:last").append(formatedEmployerTitle);
+	
+		var formatedworkDates = HTMLworkDates.replace("%data%",work.jobs[i].dates);
+		$(".work-entry:last").append(formatedworkDates);
+		
+		var formatedDescription = HTMLprojectDescription.replace("%data%",work.jobs[i].description);
+		$(".work-entry:last").append(formatedDescription);	
+
+	};
+	
+}; 
+
+function displayEducation () {
+	
+		for (var i= 0; i< education.schools.length; i++) {                //to stejne jako predtim jen jsme pouzil for a ne forin
+	 	$("#education").append(HTMLschoolStart);
+
+ 		var formatedName = HTMLschoolName.replace("%data%",education.schools[i].name);
+		$(".education-entry:last").append(formatedName);
+
+		var formatedDates = HTMLschoolDates.replace("%data%",education.schools[i].dates);
+		$(".education-entry:last").append(formatedDates);
+
+		var formatedDegree = HTMLschoolDegree.replace("%data%",education.schools[i].degree);
+		$(".education-entry:last").append(formatedDegree);
+
+		var formatedMajor = HTMLschoolMajor.replace("%data%",education.schools[i].majors);
+		$(".education-entry:last").append(formatedMajor);
+	};
+	
+	if (education.onlineCourses.length>0){
+		$(".education-entry:last").append(HTMLonlineClasses);
+
+		for (var i= 0; i< education.onlineCourses.length; i++) {                //to stejne jako predtim jen jsme pouzil for a ne forin
+
+	 		var formatedTitle = HTMLonlineTitle.replace("%data%",education.onlineCourses[i].title);
+		 	var formatedTitle2 = formatedTitle.replace("#",education.onlineCourses[i].URL);
+			$(".education-entry:last").append(formatedTitle2);	
+		
+			var formatedSChool = HTMLonlineSchool.replace("%data%",education.onlineCourses[i].school);
+			$(".education-entry:last").append(formatedSChool);	
+		
+			var formatedDates = HTMLonlineDates.replace("%data%",education.onlineCourses[i].dates);
+			$(".education-entry:last").append(formatedDates);	
+		};
+	};
+}; 
+
+function inName (Name) {
+	var finalName =  Name;
+	
+	NameArray = Name.trim().split(" ");
+	NameArray[0] = NameArray[0].slice(0,1).toUpperCase() + NameArray[0].slice(1).toLowerCase();
+	NameArray[1] = NameArray[1].toUpperCase();
+	//-------------------------------------
+	finalName = NameArray.join(" ");
+ 	return finalName; 
+ 	//--------------alternativa misto JOIN dat jen scitani------------
+ 	//return NameArray[0] + " " + NameArray[1];
+
+};
+
+
+
+projects.display = function () {
+	for (project in projects.projekty) {
+		$("#projects").append(HTMLprojectStart);
+
+		var formatedProjectTitle = HTMLprojectTitle.replace("%data%", projects.projekty[project].title);
+		$(".project-entry:last").append(formatedProjectTitle);
+
+		var formatedProjectDates = HTMLprojectDates.replace("%data%", projects.projekty[project].dates);
+		$(".project-entry:last").append(formatedProjectDates);
+
+		var formatedProjectDescription = HTMLprojectDescription.replace("%data%", projects.projekty[project].description);
+		$(".project-entry:last").append(formatedProjectDescription);
+
+		if (projects.projekty[project].images.length > 0) {
+			for (image in projects.projekty[project].images){
+				var formatedProjectImage = HTMLprojectImage.replace("%data%", projects.projekty[project].images[image]);
+				$(".project-entry:last").append(formatedProjectImage);
+			};
+		};	
+	};
+};
+displayBio();
+displaySkills();
+
+
+displayWork ();
+
+displayEducation ();
+projects.display();
+
+$("#main").prepend(internationalizeButton);
+$("#mapDiv").append(googleMap);

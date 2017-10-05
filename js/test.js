@@ -1,4 +1,4 @@
-var weirdObject = {
+/*var weirdObject = {
     "property": "Time for an astronomy lesson!",
     "property1": "Cameron's minor in college was astronomy",
     "property-2": "The 4 Galilean largest moons of Jupiter are:",
@@ -55,4 +55,95 @@ var bracketNotation7 = true;
 
 // 8property
 var dotNotation8 = false;
-var bracketNotation8 = true;
+var bracketNotation8 = true;*/
+
+
+
+//---------TEST WHILE----------------
+/*var petr = {};
+petr.job = "teacher";
+var courses = 0;
+
+var makeCourse = function () {
+	//neco udela
+	console.log ("Vytvarim kurz");
+};
+
+while (petr.job === "teacher") {
+	makeCourse ();
+	courses = courses + 1;
+	if (courses === 10) {
+		petr.job = "Vyhorela raketa";
+		
+	};
+};
+console.log (petr.job);*/
+
+//--------------TEST FOR------------------
+/*for (var i = 0; i < 9; i++) {
+	console.log(i);
+};
+
+var countries = ['Argentina', 'China', 'England'];
+
+for (country in countries) {	
+	console.log(countries[country]);
+}; */
+
+//------------------------------------------------------
+//-------------localizator---FUNKCE ENTER----------------------------
+/*var work = {
+  "jobs": [
+    {
+      "employer": "Udacity",
+      "title": "Course Developer",
+      "location": "Mountain View, CA",
+      "dates": "Feb 2014 - Current",
+      "description": "Who moved my cheese cheesy feet cauliflower cheese. Queso taleggio when the cheese comes out everybody's happy airedale ricotta cheese and wine paneer camembert de normandie. Swiss mozzarella cheese slices feta fromage frais airedale swiss cheesecake. Hard cheese blue castello halloumi parmesan say cheese stinking bishop jarlsberg."
+    },
+    {
+      "employer": "LearnBIG",
+      "title": "Software Engineer",
+      "location": "Seattle, WA",
+      "dates": "May 2013 - Jan 2014",
+      "description": "Who moved my cheese cheesy feet cauliflower cheese. Queso taleggio when the cheese comes out everybody's happy airedale ricotta cheese and wine paneer camembert de normandie. Swiss mozzarella cheese slices feta fromage frais airedale swiss cheesecake. Hard cheese blue castello halloumi parmesan say cheese stinking bishop jarlsberg."
+    },
+    {
+      "employer": "LEAD Academy Charter High School",
+      "title": "Science Teacher",
+      "location": "Nashville, TN",
+      "dates": "Jul 2012 - May 2013",
+      "description": "Who moved my cheese cheesy feet cauliflower cheese. Queso taleggio when the cheese comes out everybody's happy airedale ricotta cheese and wine paneer camembert de normandie. Swiss mozzarella cheese slices feta fromage frais airedale swiss cheesecake. Hard cheese blue castello halloumi parmesan say cheese stinking bishop jarlsberg."
+    },
+    {
+      "employer": "Stratford High School",
+      "title": "Science Teacher",
+      "location": "Nashville, TN",
+      "dates": "Jun 2009 - Jun 2012",
+      "description": "Who moved my cheese cheesy feet cauliflower cheese. Queso taleggio when the cheese comes out everybody's happy airedale ricotta cheese and wine paneer camembert de normandie. Swiss mozzarella cheese slices feta fromage frais airedale swiss cheesecake. Hard cheese blue castello halloumi parmesan say cheese stinking bishop jarlsberg."
+    }
+  ]
+};
+
+// Your code goes here! Let me help you get started
+
+function locationizer(work_obj) {
+	var localArray = [];
+
+	for (var i=0; i < work_obj.jobs.length; i++) {
+		newLoc = work_obj.jobs[i].location;
+		localArray[i] = newLoc;
+		//localArray.push(newLoc);    //alternativa 
+	};
+
+	return localArray;
+};
+
+// Did locationizer() work? This line will tell you!
+console.log(locationizer(work));
+*/
+//////------------------kam klikam--------------------------------------------------
+/*var locat = function(loc) {
+    console.log (loc.pageX, loc.pageY);
+};
+$(document).click(locat);*/
