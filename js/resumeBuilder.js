@@ -208,24 +208,30 @@ function displayBio () {
 	
 	var formatedBio = HTMLmobile.replace("%data%",bio.contacts.mobile);
 		$("#topContacts").append(formatedBio);
+		$("#footerContacts").append(formatedBio);
 	
 	var formatedBio = HTMLemail.replace("%data%",bio.contacts.email);
 		$("#topContacts").append(formatedBio);
+		$("#footerContacts").append(formatedBio);
 	
 	var formatedBio = HTMLgithub.replace("%data%",bio.contacts.github);
 		$("#topContacts").append(formatedBio);
-	
+		$("#footerContacts").append(formatedBio);
+
 	var formatedBio = HTMLtwitter.replace("%data%",bio.contacts.twitter);
 		$("#topContacts").append(formatedBio);
-	
+		$("#footerContacts").append(formatedBio);
+
 	var formatedBio = HTMLlocation.replace("%data%",bio.contacts.location);
 		$("#topContacts").append(formatedBio);
-	
+		$("#footerContacts").append(formatedBio);
+
 	var formatedBio = HTMLbioPic.replace("%data%",bio.biopic);
 		$("#header").append(formatedBio);
-	
+		
 	var formatedBio = HTMLwelcomeMsg.replace("%data%",bio.welcomeMessage);
 		$("#header").append(formatedBio);
+
 };
 
 //----------------------------------------------------------------------
@@ -368,6 +374,9 @@ projects.display = function () {
 		};	
 	};
 };
+
+
+
 displayBio();
 displaySkills();
 

@@ -147,3 +147,64 @@ console.log(locationizer(work));
     console.log (loc.pageX, loc.pageY);
 };
 $(document).click(locat);*/
+
+
+//-------------------------PRIJMENI, jmeno a vypsat dle abecedy----------------
+/*
+var moonWalkers = [
+  "Neil Armstrong",
+  "Buzz Aldrin",
+  "Pete Conrad",
+  "Alan Bean",
+  "Alan Shepard",
+  "Edgar Mitchell",
+  "David Scott",
+  "James Irwin",
+  "John Young",
+  "Charles Duke",
+  "Eugene Cernan",
+  "Harrison Schmitt"
+];
+
+function alphabetizer(names) {
+  var finalNames = names;
+  var name = [];    
+  
+  for (var i = 0; i< names.length ; i++) {
+      name = names[i].trim().split(" ");
+      finalNames[i] = name[1] + ", " + name[0]; 
+  }  
+  finalNames = finalNames.sort();
+  return (finalNames);
+}
+
+console.log(alphabetizer(moonWalkers)); */
+//-------------------------------------------------------------*/
+
+
+
+//POROVNANI DVOU Cisel-----------------------------------
+function isNumeric(x) { return x === +x; }
+
+function getRelationship(x, y) {
+    // Your code goes here!
+    var ccrb = "Can't compare relationships because ";
+    if (!isNumeric(x) && !isNumeric(y))
+        return ccrb + String(x) + " and " + String(y) + " are not numbers";
+    if (!isNumeric(x))
+        return ccrb + String(x) + " is not a number";
+    if (!isNumeric(y))
+        return ccrb + String(y) + " is not a number";
+    return x > y ? ">" : x < y ? "<" : "=";
+}
+
+// Try logging these functions to test your code!
+console.log(getRelationship(1,4));
+console.log(getRelationship(1,1));
+console.log(getRelationship("that",2));
+console.log(getRelationship("this"," something else"));
+console.log(getRelationship(3));
+console.log(getRelationship("hi"));
+console.log(getRelationship(NaN));
+console.log(getRelationship(NaN, undefined));
+
